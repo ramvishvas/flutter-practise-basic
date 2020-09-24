@@ -23,34 +23,32 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Awesome App')),
-      body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          padding: const EdgeInsets.all(8),
-          alignment: Alignment.center,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            // shape: BoxShape.circle,
-            borderRadius: BorderRadius.circular(10),
-            gradient: LinearGradient(colors: [Colors.red, Colors.yellow]),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                blurRadius: 10,
-              ),
-            ],
-          ),
-          child: Text(
-            'I am a Box',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+      body: Container(
+        color: Colors.grey,
+        height: 200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+              alignment: Alignment.center,
             ),
-          ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.green,
+              alignment: Alignment.center,
+            ),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.blue,
+              alignment: Alignment.center,
+            ),
+          ],
         ),
       ),
     );
