@@ -23,33 +23,68 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Awesome App')),
-      body: Container(
-        color: Colors.grey,
-        height: 200,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.red,
-              alignment: Alignment.center,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.green,
-              alignment: Alignment.center,
-            ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.blue,
-              alignment: Alignment.center,
-            ),
-          ],
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.red,
         ),
+      ),
+      floatingActionButton: _MyFloatingActionButton(),
+      drawer: _MyDrawer(),
+    );
+  }
+}
+
+class _MyFloatingActionButton extends StatelessWidget {
+  const _MyFloatingActionButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: Icon(Icons.edit),
+    );
+  }
+}
+
+class _MyDrawer extends StatelessWidget {
+  const _MyDrawer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          UserAccountsDrawerHeader(
+            accountName: Text('Ramvishvas Kumar'),
+            accountEmail: Text('ramvishvasg@gmail.com'),
+            currentAccountPicture: CircleAvatar(
+              backgroundImage: NetworkImage('https://picsum.photos/60'),
+            ),
+          ),
+          // DrawerHeader(
+          //   child: Center(child: Text('Welcome')),
+          //   decoration: BoxDecoration(color: Colors.purple),
+          // ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Ramvishvas Kumar'),
+            subtitle: Text('Developer'),
+            trailing: Icon(Icons.edit),
+          ),
+          ListTile(
+            leading: Icon(Icons.email),
+            title: Text('Email'),
+            subtitle: Text('ramvishvasg@gmail.com'),
+            trailing: Icon(Icons.edit),
+            onTap: () {},
+          )
+        ],
       ),
     );
   }
