@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/widgets/home_body.dart';
 
-import '../widgets/name_card.dart';
+// import '../widgets/name_card.dart';
 import '../widgets/my_drawer.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,9 +13,11 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: NameCard(),
-          ),
+          // child: SingleChildScrollView(
+          //   child: NameCard(),
+          // ),
+
+          child: HomeBody(),
         ),
       ),
       floatingActionButton: _MyFloatingActionButton(),
