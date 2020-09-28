@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/pages/home_page_sb.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'pages/home_page_fb.dart';
+// import 'pages/home_page_fb.dart';
 import 'utils/constants.dart';
 
 // import 'pages/home_page.dart';
@@ -30,13 +31,22 @@ class MyApp extends StatelessWidget {
       //   HomePage.routeName: (context) => HomePage(),
       // },
 
-      // Future Builder Code ................
+      // // Future Builder Code ................
+      // home: Constants.prefs.getBool('loggedIn') == true
+      //     ? HomePageFB()
+      //     : LoginPage(),
+      // routes: {
+      //   LoginPage.routeName: (context) => LoginPage(),
+      //   HomePageFB.routeName: (context) => HomePageFB(),
+      // },
+
+      // Stream Builder Code ................
       home: Constants.prefs.getBool('loggedIn') == true
-          ? HomePageFB()
+          ? HomePageSB()
           : LoginPage(),
       routes: {
         LoginPage.routeName: (context) => LoginPage(),
-        HomePageFB.routeName: (context) => HomePageFB(),
+        HomePageSB.routeName: (context) => HomePageSB(),
       },
     );
   }
