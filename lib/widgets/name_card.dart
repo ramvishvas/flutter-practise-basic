@@ -20,7 +20,7 @@ class __MyCardState extends State<NameCard> {
       child: Column(
         children: [
           Image.asset(
-            'coder.jpg',
+            'assets/coder.jpg',
             // height: 100,
             // width: 100,
             fit: BoxFit.cover,

@@ -5,10 +5,22 @@ import 'package:flutter_basic/widgets/home_body.dart';
 import '../widgets/my_drawer.dart';
 
 class HomePage extends StatelessWidget {
+  static const String routeName = '/home';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Awesome App')),
+      appBar: AppBar(
+        title: Text('Awesome App'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
       backgroundColor: Colors.grey[200],
       body: Center(
         child: Padding(
