@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/pages/home_page.dart';
+// import 'package:flutter_basic/pages/home_page.dart';
+import 'package:flutter_basic/pages/home_page_fb.dart';
 import 'package:flutter_basic/utils/constants.dart';
 
 class LoginPage extends StatefulWidget {
@@ -107,9 +108,14 @@ class _MyForm extends StatelessWidget {
                     //   HomePage.routeName,
                     // );
 
+                    // Navigator.pushReplacementNamed(
+                    //   context,
+                    //   HomePage.routeName,
+                    // );
+
                     Navigator.pushReplacementNamed(
                       context,
-                      HomePage.routeName,
+                      HomePageFB.routeName,
                     );
                   },
                   color: Colors.orange,

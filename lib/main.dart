@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'pages/home_page.dart';
+import 'pages/home_page_fb.dart';
+import 'utils/constants.dart';
+
+// import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 
 Future main() async {
@@ -20,12 +22,21 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      // home: Constants.prefs.getBool('loggedIn') == true
+      //     ? HomePage()
+      //     : LoginPage(),
+      // routes: {
+      //   LoginPage.routeName: (context) => LoginPage(),
+      //   HomePage.routeName: (context) => HomePage(),
+      // },
+
+      // Future Builder Code ................
       home: Constants.prefs.getBool('loggedIn') == true
-          ? HomePage()
+          ? HomePageFB()
           : LoginPage(),
       routes: {
         LoginPage.routeName: (context) => LoginPage(),
-        HomePage.routeName: (context) => HomePage(),
+        HomePageFB.routeName: (context) => HomePageFB(),
       },
     );
   }
