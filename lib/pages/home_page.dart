@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/pages/login_page.dart';
+import 'package:flutter_basic/utils/constants.dart';
 import 'package:flutter_basic/widgets/home_body.dart';
 
 // import '../widgets/name_card.dart';
@@ -16,7 +18,10 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.exit_to_app),
             onPressed: () {
-              Navigator.pop(context);
+              // Navigator.pop(context);
+
+              Constants.prefs.setBool('loggedIn', true);
+              Navigator.pushReplacementNamed(context, LoginPage.routeName);
             },
           ),
         ],
